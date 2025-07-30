@@ -5,68 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0e5b8c" />
   <link rel="manifest" href="manifest.json" />
-  <title>Lark Drive – DASC</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    .fallback {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background-color: #ffffff;
-      color: #333333;
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
+  <title>Launching Lark Drive...</title>
 </head>
 <body>
-  <iframe id="larkframe" src="https://modqc1gp7y9.jp.larksuite.com/drive/home/"></iframe>
-
-  <div class="fallback" id="fallback" style="display:none;">
-    <p><strong>Lark Drive couldn’t load inside this app.</strong></p>
-    <p>Click below to open it directly:</p>
-    <p><a href="https://modqc1gp7y9.jp.larksuite.com/drive/home/" target="_blank" style="color: #0e5b8c;">Open Lark Drive in browser</a></p>
-  </div>
+  <p>Launching <a id="link" href="https://modqc1gp7y9.jp.larksuite.com/drive/home/">Lark Drive</a>...</p>
 
   <script>
-    // Detect if iframe failed to load
-    const iframe = document.getElementById('larkframe');
-    const fallback = document.getElementById('fallback');
-
-    iframe.onerror = () => {
-      fallback.style.display = 'flex';
-      iframe.style.display = 'none';
-    };
-
-    // Extra fallback (e.g., security header block)
-    setTimeout(() => {
-      const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-      if (!iframeDoc || iframeDoc.body.innerHTML.trim() === '') {
-        fallback.style.display = 'flex';
-        iframe.style.display = 'none';
-      }
-    }, 3000);
+    // Open the link in the browser immediately
+    window.location.href = "https://modqc1gp7y9.jp.larksuite.com/drive/home/";
   </script>
 
   <script>
+    // Keep PWA installable
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js');
     }
