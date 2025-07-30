@@ -5,18 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0e5b8c" />
   <link rel="manifest" href="manifest.json" />
-  <title>Launching Lark Drive...</title>
+  <title>Launch Lark Drive</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+  </style>
 </head>
 <body>
-  <p>Launching <a id="link" href="https://modqc1gp7y9.jp.larksuite.com/drive/home/">Lark Drive</a>...</p>
+  <h2>Launching Lark Drive...</h2>
+  <p>This app will open Lark in a few seconds.</p>
+  <p>If not, <a href="https://modqc1gp7y9.jp.larksuite.com/drive/home/">click here</a>.</p>
+  <p><em>To install this as an app, use your browser’s "Add to Home Screen" option.</em></p>
 
   <script>
-    // Open the link in the browser immediately
-    window.location.href = "https://modqc1gp7y9.jp.larksuite.com/drive/home/";
+    setTimeout(() => {
+      window.location.href = "https://modqc1gp7y9.jp.larksuite.com/drive/home/";
+    }, 5000); // 5 second delay
   </script>
 
   <script>
-    // Keep PWA installable
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js');
     }
